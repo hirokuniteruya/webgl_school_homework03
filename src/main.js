@@ -251,8 +251,8 @@ function animate() {
   if (run === true) requestAnimationFrame(animate);
 
   // 例に倣ってとりあえず回しておく…
-  sun.rotation.y += 0.01;
-  earth.rotation.y += 0.02;
+  sun.rotation.y += 0.005;
+  earth.rotation.y += 0.04;
   moon.rotation.y += 0.03;
 
   // nowTime と sin, cos の算出
