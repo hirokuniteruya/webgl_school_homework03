@@ -166,13 +166,6 @@ function init() {
   earth.add(bldg_b);
 
   // 衛星の軌道
-  // const circleGeometry = new THREE.CircleBufferGeometry(EARTH_RANGE, 256);
-  // console.log('circleGeometry: ', circleGeometry);
-  // // circleGeometry.attributes.position.array.shift();
-  // const circleMaterial = new THREE.LineBasicMaterial({ color: 0xffffff });
-  // const circle = new THREE.Line(circleGeometry, circleMaterial);
-  // circle.rotation.x = Math.PI / 2;
-  // scene.add(circle);
   const ringGeometry = new THREE.RingBufferGeometry(
     EARTH_RANGE - 0.01,
     EARTH_RANGE + 0.01,
