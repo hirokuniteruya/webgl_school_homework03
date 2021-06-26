@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'js/[name]-[hash].js',
-    publicPath: '/dist/'
+    // publicPath: '/'
   },
   module: {
     rules: [
