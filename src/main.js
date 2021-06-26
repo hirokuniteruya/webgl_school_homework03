@@ -15,15 +15,13 @@ let startTime = 0;
 let scene;
 let camera;
 let renderer;
-let renderer_b;
+let renderer_b; // 月から見た地球を映し出すためのレンダラー
 let geometry;
 let controls;
 let axesHelper;
 let directionalLight;
 let ambientLight;
 let satelliteCamera;
-let renderTarget;
-let satelliteCameraScreen;
 
 // 太陽、地球、月 それぞれの メッシュ、マテリアル、テクスチャ
 let sun;
@@ -263,12 +261,11 @@ function animate() {
   // 地球の位置の更新
   earth.position.set(cos * EARTH_RANGE, 0.0, -sin * EARTH_RANGE);
 
+  // 月の位置を更新するための単位ベクトル
   let unitVector = new THREE.Vector3(1.0, -0.8, 0.0).normalize();
   let unitVectorZ = new THREE.Vector3(0.0, 0.0, -1.0); // z軸の負方向の単位ベクトル
 
-  const tangent = new THREE.Vector3()
-    .crossVectors(unitVector, unitVectorZ)
-    .normalize();
+  const tangent = new THREE.Vector3().crossVectors(unitVector, unitVectorZ).normalize();
   const angle = (Math.PI * nowTime) / 2;
 
   unitVector.applyAxisAngle(tangent, angle);
